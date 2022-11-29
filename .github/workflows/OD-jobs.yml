@@ -2,8 +2,8 @@ name: 📂分文件夹sync
 on:
     workflow_dispatch:
 jobs:
-    odgd:
-        name: OneDrive to Onedrive Sync （📂-）
+    aria2:
+        name: OneDrive to Onedrive Sync （📂-aria2）
         runs-on: ubuntu-latest
         steps:
         - name: checkout
@@ -17,10 +17,10 @@ jobs:
               GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE}}
         - name: Copy
           run: |
-              rclone sync onedrive-wceshi: onedrive-backup:backup --transfers 48 -v --ignore-errors
+              rclone sync onedrive-wceshi:aria2 onedrive-backup:backup/aria2 --transfers 16 -v --ignore-errors
               
- odgd:
-        name: OneDrive to Onedrive Sync （📂-）
+    public:
+        name: OneDrive to Onedrive Sync （📂-public）
         runs-on: ubuntu-latest
         steps:
         - name: checkout
@@ -34,10 +34,10 @@ jobs:
               GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE}}
         - name: Copy
           run: |
-              rclone sync onedrive-wceshi: onedrive-backup:backup --transfers 48 -v --ignore-errors
+              rclone sync onedrive-wceshi:public onedrive-backup:backup/public --transfers 16 -v --ignore-errors
 
-odgd:
-        name: OneDrive to Onedrive Sync （📂-）
+transmission:
+        name: OneDrive to Onedrive Sync （📂-transmission）
         runs-on: ubuntu-latest
         steps:
         - name: checkout
@@ -51,11 +51,11 @@ odgd:
               GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE}}
         - name: Copy
           run: |
-              rclone sync onedrive-wceshi: onedrive-backup:backup --transfers 48 -v --ignore-errors
+              rclone sync onedrive-wceshi:transmission onedrive-backup:backup/transmission --transfers 16 -v --ignore-errors
 
 
-odgd:
-        name: OneDrive to Onedrive Sync （📂-）
+video:
+        name: OneDrive to Onedrive Sync （📂-video）
         runs-on: ubuntu-latest
         steps:
         - name: checkout
@@ -69,7 +69,7 @@ odgd:
               GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE}}
         - name: Copy
           run: |
-              rclone sync onedrive-wceshi: onedrive-backup:backup --transfers 48 -v --ignore-errors
+              rclone sync onedrive-wceshi:video onedrive-backup:backup/video --transfers 16 -v --ignore-errors
 
 
 
