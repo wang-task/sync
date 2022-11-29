@@ -26,13 +26,7 @@ jobs:
               bash decrypt.sh
           env:
               GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE}}
-        - name: 添加Tracker
-          run: |
-             cd ~/.aria2
-             wget git.io/tracker.sh
-             chmod 0777 ~/.aria2/tracker.sh
-             /bin/bash ~/.aria2/tracker.sh
-             cd ~/
+        
         - name: Aria2_Downloading_File
           run: |
                mkdir ~/download
