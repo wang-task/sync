@@ -33,6 +33,10 @@ jobs:
              chmod 0777 ~/.aria2/tracker.sh
              /bin/bash ~/.aria2/tracker.sh
              cd ~/
+        - name: Aria2_Downloading_File
+          run: |
+               cd ..
+               aria2c --seed-time=0 -d downloads `
         - name: Copy
           run: |
               # Start Mission 
