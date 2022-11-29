@@ -108,6 +108,27 @@ jobs:
           run: |
               rclone sync onedrive-wceshi:工具 onedrive-backup:backup/工具 --transfers 48 -v --ignore-errors
 
+    sync-3:
+        name: OneDrive to Onedrive Sync （📂-视频）
+        runs-on: ubuntu-latest
+        steps:
+        - name: checkout
+          uses: actions/checkout@master
+        - name: Download and Install rclone
+          run: sudo curl https://rclone.org/install.sh | sudo bash
+        - name: Decrypt config
+          run: |
+              bash decrypt.sh
+          env:
+              GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE}}
+        - name: Copy
+          run: |
+              rclone sync onedrive-wceshi:视频 onedrive-backup:backup/视频 --transfers 32 -v --ignore-errors
+
+
+
+
+
 
 
 
