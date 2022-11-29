@@ -1,13 +1,6 @@
 name: Drive Sync
 on:
     workflow_dispatch:
-     inputs:
-       tags:
-         description: 'Test scenario tags'
-       environment:
-           description: '下载链接'
-           type: environment
-           required: true
     schedule:
         - cron: '0 2 * * 5'
 jobs:
