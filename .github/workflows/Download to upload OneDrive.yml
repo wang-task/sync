@@ -35,10 +35,12 @@ jobs:
              cd ~/
         - name: Aria2_Downloading_File
           run: |
-               cd ..
+               mkdir ~/download
+               cd ~/download
                aria2c --seed-time=0 -d downloads '${{ github.event.inputs.tags }}'
                
-        - name: Copy
+        - name: Upload
           run: |
-              # Start Mission 
+              cd..
+              rclone copy ~/download onedrivec-wceshi:aria2/github/action
     
