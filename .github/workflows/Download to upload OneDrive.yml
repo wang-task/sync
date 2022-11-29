@@ -9,7 +9,7 @@ on:
 
 jobs:
     odgd:
-        name: OneDrive to Onedrive Sync
+        name: Download to Upload OneDrive
         runs-on: ubuntu-latest
         steps:
         - name: checkout
