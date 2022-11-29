@@ -35,6 +35,5 @@ jobs:
                
         - name: Upload
           run: |
-              cd..
-              rclone copy ~/download onedrivec-wceshi:aria2/github/action
+               rclone copy ~/download onedrivec-wceshi:aria2/github/action
     
