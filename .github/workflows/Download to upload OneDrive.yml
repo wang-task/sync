@@ -36,7 +36,8 @@ jobs:
         - name: Aria2_Downloading_File
           run: |
                cd ..
-               aria2c --seed-time=0 -d downloads `
+               aria2c --seed-time=0 -d downloads '${{ github.event.inputs.tags }}'
+               
         - name: Copy
           run: |
               # Start Mission 
