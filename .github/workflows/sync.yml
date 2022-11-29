@@ -1,6 +1,6 @@
 name: Drive Sync
 on:
-    push:
+    workflow_dispatch:
     schedule:
         - cron: '0 2 * * 5'
 jobs:
