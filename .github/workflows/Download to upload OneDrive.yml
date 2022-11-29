@@ -16,11 +16,23 @@ jobs:
           uses: actions/checkout@master
         - name: Download and Install rclone
           run: sudo curl https://rclone.org/install.sh | sudo bash
+        - name: Aria2 Install(无限制版本)
+          run: |
+                wget https://github.com/P3TERX/Aria2-Pro-Core/releases/download/1.36.0_2021.08.22/aria2-1.36.0-static-linux-amd64.tar.gz
+                tar zxvf aria2-1.36.0-static-linux-amd64.tar.gz
+                sudo mv aria2c /usr/local/bin
         - name: Decrypt config
           run: |
               bash decrypt.sh
           env:
               GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE}}
+        - name: 添加Tracker
+          run: |
+             cd ~/.aria2
+             wget git.io/tracker.sh
+             chmod 0777 ~/.aria2/tracker.sh
+             /bin/bash ~/.aria2/tracker.sh
+             cd ~/
         - name: Copy
           run: |
               # Start Mission 
