@@ -3,7 +3,7 @@ on:
     workflow_dispatch:
 jobs:
     odgd:
-        name: OneDrive to Onedrive Sync
+        name: OneDrive to Onedrive Sync （📂-）
         runs-on: ubuntu-latest
         steps:
         - name: checkout
@@ -17,5 +17,117 @@ jobs:
               GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE}}
         - name: Copy
           run: |
-              # Start Mission 
-              bash copy.sh
+              rclone sync onedrive-wceshi: onedrive-backup:backup --transfers 48 -v --ignore-errors
+              
+ odgd:
+        name: OneDrive to Onedrive Sync （📂-）
+        runs-on: ubuntu-latest
+        steps:
+        - name: checkout
+          uses: actions/checkout@master
+        - name: Download and Install rclone
+          run: sudo curl https://rclone.org/install.sh | sudo bash
+        - name: Decrypt config
+          run: |
+              bash decrypt.sh
+          env:
+              GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE}}
+        - name: Copy
+          run: |
+              rclone sync onedrive-wceshi: onedrive-backup:backup --transfers 48 -v --ignore-errors
+
+odgd:
+        name: OneDrive to Onedrive Sync （📂-）
+        runs-on: ubuntu-latest
+        steps:
+        - name: checkout
+          uses: actions/checkout@master
+        - name: Download and Install rclone
+          run: sudo curl https://rclone.org/install.sh | sudo bash
+        - name: Decrypt config
+          run: |
+              bash decrypt.sh
+          env:
+              GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE}}
+        - name: Copy
+          run: |
+              rclone sync onedrive-wceshi: onedrive-backup:backup --transfers 48 -v --ignore-errors
+
+
+odgd:
+        name: OneDrive to Onedrive Sync （📂-）
+        runs-on: ubuntu-latest
+        steps:
+        - name: checkout
+          uses: actions/checkout@master
+        - name: Download and Install rclone
+          run: sudo curl https://rclone.org/install.sh | sudo bash
+        - name: Decrypt config
+          run: |
+              bash decrypt.sh
+          env:
+              GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE}}
+        - name: Copy
+          run: |
+              rclone sync onedrive-wceshi: onedrive-backup:backup --transfers 48 -v --ignore-errors
+
+
+
+odgd:
+        name: OneDrive to Onedrive Sync （📂-）
+        runs-on: ubuntu-latest
+        steps:
+        - name: checkout
+          uses: actions/checkout@master
+        - name: Download and Install rclone
+          run: sudo curl https://rclone.org/install.sh | sudo bash
+        - name: Decrypt config
+          run: |
+              bash decrypt.sh
+          env:
+              GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE}}
+        - name: Copy
+          run: |
+              rclone sync onedrive-wceshi: onedrive-backup:backup --transfers 48 -v --ignore-errors
+
+
+
+odgd:
+        name: OneDrive to Onedrive Sync （📂-）
+        runs-on: ubuntu-latest
+        steps:
+        - name: checkout
+          uses: actions/checkout@master
+        - name: Download and Install rclone
+          run: sudo curl https://rclone.org/install.sh | sudo bash
+        - name: Decrypt config
+          run: |
+              bash decrypt.sh
+          env:
+              GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE}}
+        - name: Copy
+          run: |
+              rclone sync onedrive-wceshi: onedrive-backup:backup --transfers 48 -v --ignore-errors
+
+
+odgd:
+        name: OneDrive to Onedrive Sync （📂-）
+        runs-on: ubuntu-latest
+        steps:
+        - name: checkout
+          uses: actions/checkout@master
+        - name: Download and Install rclone
+          run: sudo curl https://rclone.org/install.sh | sudo bash
+        - name: Decrypt config
+          run: |
+              bash decrypt.sh
+          env:
+              GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE}}
+        - name: Copy
+          run: |
+              rclone sync onedrive-wceshi: onedrive-backup:backup --transfers 48 -v --ignore-errors
+
+
+
+
+
