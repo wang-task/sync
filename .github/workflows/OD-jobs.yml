@@ -36,7 +36,7 @@ jobs:
           run: |
               rclone sync onedrive-wceshi:public onedrive-backup:backup/public --transfers 16 -v --ignore-errors
 
-transmission:
+    transmission:
         name: OneDrive to Onedrive Sync （📂-transmission）
         runs-on: ubuntu-latest
         steps:
@@ -54,7 +54,7 @@ transmission:
               rclone sync onedrive-wceshi:transmission onedrive-backup:backup/transmission --transfers 16 -v --ignore-errors
 
 
-video:
+    video:
         name: OneDrive to Onedrive Sync （📂-video）
         runs-on: ubuntu-latest
         steps:
@@ -72,9 +72,9 @@ video:
               rclone sync onedrive-wceshi:video onedrive-backup:backup/video --transfers 16 -v --ignore-errors
 
 
-
-odgd:
-        name: OneDrive to Onedrive Sync （📂-）
+ 
+    sync-1:
+        name: OneDrive to Onedrive Sync （📂-图片）
         runs-on: ubuntu-latest
         steps:
         - name: checkout
@@ -88,12 +88,11 @@ odgd:
               GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE}}
         - name: Copy
           run: |
-              rclone sync onedrive-wceshi: onedrive-backup:backup --transfers 48 -v --ignore-errors
+              rclone sync onedrive-wceshi:图片 onedrive-backup:backup/图片 --transfers 32 -v --ignore-errors
 
 
-
-odgd:
-        name: OneDrive to Onedrive Sync （📂-）
+    sync-2:
+        name: OneDrive to Onedrive Sync （📂-工具）
         runs-on: ubuntu-latest
         steps:
         - name: checkout
@@ -107,25 +106,7 @@ odgd:
               GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE}}
         - name: Copy
           run: |
-              rclone sync onedrive-wceshi: onedrive-backup:backup --transfers 48 -v --ignore-errors
-
-
-odgd:
-        name: OneDrive to Onedrive Sync （📂-）
-        runs-on: ubuntu-latest
-        steps:
-        - name: checkout
-          uses: actions/checkout@master
-        - name: Download and Install rclone
-          run: sudo curl https://rclone.org/install.sh | sudo bash
-        - name: Decrypt config
-          run: |
-              bash decrypt.sh
-          env:
-              GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE}}
-        - name: Copy
-          run: |
-              rclone sync onedrive-wceshi: onedrive-backup:backup --transfers 48 -v --ignore-errors
+              rclone sync onedrive-wceshi:工具 onedrive-backup:backup/工具 --transfers 48 -v --ignore-errors
 
 
 
