@@ -1,4 +1,4 @@
-name: 📂分文件夹sync
+name: 📂分文件夹sync(4线程）
 on:
     workflow_dispatch:
 jobs:
